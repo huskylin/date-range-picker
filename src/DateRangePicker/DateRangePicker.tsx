@@ -27,9 +27,11 @@ export default function DatePicker({
 
   const handleSelectStart = (date: Date) => {
     setSelectedDate((pre) => ({ start: date, end: pre.end }));
+    onSelectStart(date);
   };
   const handleSelectEnd = (date: Date) => {
     setSelectedDate((pre) => ({ start: pre.start, end: date }));
+    onSelectEnd(date);
   };
 
   // close calendar if click outside
